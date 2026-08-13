@@ -1,19 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="53fb88a2-e8c6-4892-abc1-e0a2c7372450" name="更改" comment="" />
+    <list default="true" id="53fb88a2-e8c6-4892-abc1-e0a2c7372450" name="更改" comment="2">
+      <change beforePath="$PROJECT_DIR$/.idea/NEW_Z2U.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NEW_Z2U.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3,
-  "fromUser": false
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "dxq0467-spec"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:dxq0467-spec/NewZ2UTest.git",
+    "accountId": "10741f9e-b31b-428e-9bc3-a62fda47d3e8"
+  }
+}]]></component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000011262823691" />
+      <entry key="MS500" value="1.0646144210154977" />
+      <entry key="S2" value="1.5042004129156252" />
+      <entry key="S5" value="1.7746210952837593" />
+      <entry key="S10" value="1.991730915285407" />
+      <entry key="S30" value="2.7272823849968626" />
+      <entry key="S60" value="4.582446080001036" />
+      <entry key="M2" value="9.116956707645272" />
+      <entry key="M5" value="22.759234201453474" />
+      <entry key="M10" value="45.07444669555526" />
+      <entry key="M15" value="61.291773600135144" />
+      <entry key="M30" value="86.87155346617568" />
+      <entry key="H1" value="104.96442998070174" />
+      <entry key="H2" value="115.7820023395378" />
+      <entry key="H4" value="121.70440284492939" />
+      <entry key="D1" value="126.92377298645678" />
+      <entry key="W1" value="127.84557894237211" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="7.739153023943224E-81" />
+      <entry key="S2" value="9.379363307426367E-21" />
+      <entry key="S5" value="9.746991964551015E-9" />
+      <entry key="S10" value="9.894659458845121E-5" />
+      <entry key="S30" value="0.061672939087520015" />
+      <entry key="S60" value="0.6082686820481722" />
+      <entry key="M2" value="2.8287703930827273" />
+      <entry key="M5" value="10.708655980926089" />
+      <entry key="M10" value="23.120637469276627" />
+      <entry key="M15" value="32.06272396633929" />
+      <entry key="M30" value="46.18515559526347" />
+      <entry key="H1" value="56.20441692334043" />
+      <entry key="H2" value="62.20787510743945" />
+      <entry key="H4" value="65.49871044617409" />
+      <entry key="D1" value="68.40123508395884" />
+      <entry key="W1" value="68.91408138571893" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.901251409697637" />
+      <entry key="MS500" value="1.041833714218241" />
+      <entry key="S2" value="1.4946654399335242" />
+      <entry key="S5" value="1.7698245507853703" />
+      <entry key="S10" value="1.9888729033017365" />
+      <entry key="S30" value="2.779214901850688" />
+      <entry key="S60" value="5.158128726608366" />
+      <entry key="M2" value="11.884768040382413" />
+      <entry key="M5" value="33.38588082770259" />
+      <entry key="M10" value="68.10913608686197" />
+      <entry key="M15" value="93.27559684326337" />
+      <entry key="M30" value="133.0001923298008" />
+      <entry key="H1" value="161.13453260962055" />
+      <entry key="H2" value="177.97090565463233" />
+      <entry key="H4" value="187.19312999472893" />
+      <entry key="D1" value="195.32327106542024" />
+      <entry key="W1" value="196.75941033875486" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3HqdBt5r2c2JnulZY7bjuvGipoi" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -22,15 +107,54 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python 测试.Test.test_index.test_01 的 Python 测试.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "D:/PycharmProjects/NEW_Z2U",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\Administrator\PycharmProjects\NEW_Z2U\Utils" />
+      <recent name="D:\Users\Administrator\PycharmProjects\NEW_Z2U" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Test.test_index.test_01 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="NEW_Z2U" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Test.test_index.test_01&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python 测试.Test.test_index.test_01 的 Python 测试" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -46,9 +170,22 @@
       <option name="presentableId" value="Default" />
       <updated>1786599400872</updated>
     </task>
+    <task id="LOCAL-00001" summary="2">
+      <option name="closed" value="true" />
+      <created>1786601878880</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1786601878880</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2" />
   </component>
 </project>
