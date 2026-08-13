@@ -1,8 +1,10 @@
 import os
 import time
+import allure
 from Utils.data_reader import read_yaml
 import pytest
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, Page
+
 
 @pytest.fixture(scope="session")
 def browser():
@@ -33,3 +35,20 @@ def config():
     if yaml is None:
         raise ValueError("product_data.yaml 读取失败，请检查文件路径和内容")
     return yaml
+
+def pytest_runtest_markereport(item,call):
+    if call.when=="call"and call.excinfo is not None:
+        page_fixtures=[]
+        for name,value in item.funcargs.items():
+            if isinstance(value,Page):
+                page_fixtures.append((name,value))
+        for name,page in page_fixtures:
+            try:
+                screenshot_bytes = page.screenshot(full_page=True)
+                allure.attach(
+                    screenshot_bytes,
+                    name=f"失败截图【{name}】",
+                    attachment_type=allure.attachment_type.PNG
+                )
+            except Exception as err:
+                print(f"[{name}] 截图捕获异常：{err}")
