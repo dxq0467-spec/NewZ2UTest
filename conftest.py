@@ -1,4 +1,5 @@
 import os
+import shutil
 import time
 import allure
 from Utils.data_reader import read_yaml
@@ -10,9 +11,9 @@ from playwright.sync_api import sync_playwright, Page
 def browser():
     with sync_playwright() as f:
         browser=f.chromium.launch(
-            headless=False,   # 调试改为False；线上运行改为True
-            slow_mo=300,
-            args =["--start-maximized"])
+            headless=False,   # False 弹出浏览器  True 不敢出浏览器
+            slow_mo=300,#强制等待0.3s
+            args =["--start-maximized"])#浏览器窗口最大化
         yield browser
         browser.close()
 
@@ -54,3 +55,12 @@ def pytest_runtest_makereport(item,call):
                 )
             except Exception as err:
                 print(f"[{name}] 截图捕获异常：{err}")
+
+# 运行所有测试之前执行，清空allure结果目录
+@pytest.fixture(scope="session", autouse=True)
+def clear_allure_results():
+    result_path = "./allure-results"
+    if os.path.exists(result_path):
+        shutil.rmtree(result_path)
+    os.makedirs(result_path, exist_ok=True)
+    yield
