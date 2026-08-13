@@ -20,12 +20,14 @@ def browser():
 def admin(browser):
     cookie_file='User/json/user.json'
     context=browser.new_context(
+        no_viewport=True,
+        ignore_https_errors=True,
         storage_state=cookie_file if os.path.exists(cookie_file) else None)
     page=context.new_page()
     page.goto("http://new.z2u.test/admin")
-    if '登录' in page.title():
+    if '登录' in page.title():#判断是否登录
         time.sleep(60)
-        print("需要手动登录买家账号，请在60秒内完成登录！")
+        print("需要手动登录管理员账号，请在60秒内完成登录！")
         page.context.storage_state(path=cookie_file)
     yield page
     page.close()
@@ -36,7 +38,7 @@ def config():
         raise ValueError("product_data.yaml 读取失败，请检查文件路径和内容")
     return yaml
 
-def pytest_runtest_markereport(item,call):
+def pytest_runtest_makereport(item,call):
     if call.when=="call"and call.excinfo is not None:
         page_fixtures=[]
         for name,value in item.funcargs.items():
