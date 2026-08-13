@@ -1,0 +1,29 @@
+# config/config.yaml
+
+
+# 等待时间配置
+WAIT_TIME : 2000
+PAGE_LOAD_WAIT : 3000
+SHORT_WAIT : 2000
+LONG_WAIT : 15000
+DEFAULT_TIMEOUT : 20000
+
+# 浏览器配置
+HEADLESS : False  # 是否无头模式
+BROWSER : 'chrome'  # chrome/firefox
+
+
+# 日志配
+LOG_LEVEL : 'INFO'
+LOG_FILE : 'Log/test_log.log'
+
+# 截图配置
+SCREENSHOTS_DIR : 'Screenshots'
+
+
+
+BASE_URL : 'http://new.z2u.test'
+LANG : '/zh-CN'
+
+
+
