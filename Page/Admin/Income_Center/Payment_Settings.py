@@ -249,7 +249,6 @@ class PaymentSettings(PageBase):
         def filter_payment_flow(self, keyword='', show_status='', pay_type=''):
             """筛选支付方式流程"""
             self.payment_settings.open_page()
-            self.payment_settings.page_search_page()
             if keyword:
                 self.payment_settings.input_keyword(keyword)
             if show_status:
