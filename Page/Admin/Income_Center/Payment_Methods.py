@@ -111,8 +111,9 @@ class PaymentMethods(PageBase):
             "open": "1",
             "close": "2"
         }
-        select_value = values.get(value)
-        self.select_dropdown(self.is_open, select_value)
+        if value in values:
+            select_value = values[value]
+            self.select_dropdown(self.is_open, select_value)
 
     def select_currency(self, value):
         """选择包含币种（多选）"""
@@ -127,8 +128,8 @@ class PaymentMethods(PageBase):
     # =============== 提款方式描述 ================
     def input_description(self, value):
         """输入提款方式描述（当前语言）"""
-        self.page.locator(self.description_editor).click()
-        self.page.locator(self.description_editor).fill(value)
+        self.click(self.description_editor)
+        self.input_text(self.description_editor,value)
 
     def switch_description_tab(self, lang):
         """切换描述语言标签"""
@@ -140,38 +141,38 @@ class PaymentMethods(PageBase):
         self.click(self.submit_button)
 
     # =============== 业务流程 ================
-    class PaymentMethodsFlow:
-        def __init__(self, page):
-            self.page = page
-            self.payment_methods = PaymentMethods(page)
+class PaymentMethodsFlow:
+    def __init__(self, page):
+        self.page = page
+        self.payment_methods = PaymentMethods(page)
 
-        def insert_method_flow(self, name, alias, sort, payment_free, fixed_free, min_amount):
-            """新增提款方式流程"""
-            self.payment_methods.open_page()
-            self.payment_methods.page_insert_button()
-            self.payment_methods.input_payment_name(name)
-            self.payment_methods.input_alias(alias)
-            self.payment_methods.input_sort(sort)
-            self.payment_methods.input_payment_free(payment_free)
-            self.payment_methods.input_fixed_free(fixed_free)
-            self.payment_methods.input_min_amount(min_amount)
-            self.payment_methods.page_submit_button()
+    def insert_method_flow(self, name, alias, sort, payment_free, fixed_free, min_amount):
+        """新增提款方式流程"""
+        self.payment_methods.open_page()
+        self.payment_methods.page_insert_button()
+        self.payment_methods.input_payment_name(name)
+        self.payment_methods.input_alias(alias)
+        self.payment_methods.input_sort(sort)
+        self.payment_methods.input_payment_free(payment_free)
+        self.payment_methods.input_fixed_free(fixed_free)
+        self.payment_methods.input_min_amount(min_amount)
+        self.payment_methods.page_submit_button()
 
-        def edit_method_flow(self, name, new_name, new_alias, new_sort):
-            """编辑提款方式流程"""
-            self.payment_methods.open_page()
-            self.payment_methods.page_edit_button_by_name(name)
-            self.payment_methods.input_payment_name(new_name)
-            self.payment_methods.input_alias(new_alias)
-            self.payment_methods.input_sort(new_sort)
-            self.payment_methods.page_submit_button()
+    def edit_method_flow(self, name, new_name, new_alias, new_sort):
+        """编辑提款方式流程"""
+        self.payment_methods.open_page()
+        self.payment_methods.page_edit_button_by_name(name)
+        self.payment_methods.input_payment_name(new_name)
+        self.payment_methods.input_alias(new_alias)
+        self.payment_methods.input_sort(new_sort)
+        self.payment_methods.page_submit_button()
 
-        def delete_method_flow(self, name):
-            """删除提款方式流程"""
-            self.payment_methods.open_page()
-            self.payment_methods.page_delete_button_by_name(name)
+    def delete_method_flow(self, name):
+        """删除提款方式流程"""
+        self.payment_methods.open_page()
+        self.payment_methods.page_delete_button_by_name(name)
 
-        def search_method_flow(self, keyword):
-            """搜索提款方式流程"""
-            self.payment_methods.open_page()
-            self.payment_methods.page_search(keyword)
+    def search_method_flow(self, keyword):
+        """搜索提款方式流程"""
+        self.payment_methods.open_page()
+        self.payment_methods.page_search(keyword)

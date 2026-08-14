@@ -226,33 +226,33 @@ class PaymentSettings(PageBase):
         self.click(self.submit_button)
 
     # =============== 业务流程 ================
-    class PaymentSettingsFlow:
-        def __init__(self, page):
-            self.page = page
-            self.payment_settings = PaymentSettings(page)
+class PaymentSettingsFlow:
+    def __init__(self, page):
+        self.page = page
+        self.payment_settings = PaymentSettings(page)
 
-        def insert_payment_flow(self, pay_name, pay_full_name, sort, token):
-            """新增支付方式流程"""
-            self.payment_settings.open_page()
-            self.payment_settings.page_insert_button()
-            self.payment_settings.input_pay_name(pay_name)
-            self.payment_settings.input_pay_full_name(pay_full_name)
-            self.payment_settings.input_sort(sort)
-            self.payment_settings.input_unique_token(token)
-            self.payment_settings.page_submit_button()
+    def insert_payment_flow(self, pay_name, pay_full_name, sort, token):
+        """新增支付方式流程"""
+        self.payment_settings.open_page()
+        self.payment_settings.page_insert_button()
+        self.payment_settings.input_pay_name(pay_name)
+        self.payment_settings.input_pay_full_name(pay_full_name)
+        self.payment_settings.input_sort(sort)
+        self.payment_settings.input_unique_token(token)
+        self.payment_settings.page_submit_button()
 
-        def edit_payment_flow(self, name):
-            """编辑支付方式流程"""
-            self.payment_settings.open_page()
-            self.payment_settings.page_edit_button_by_name(name)
+    def edit_payment_flow(self, name):
+        """编辑支付方式流程"""
+        self.payment_settings.open_page()
+        self.payment_settings.page_edit_button_by_name(name)
 
-        def filter_payment_flow(self, keyword='', show_status='', pay_type=''):
-            """筛选支付方式流程"""
-            self.payment_settings.open_page()
-            if keyword:
-                self.payment_settings.input_keyword(keyword)
-            if show_status:
-                self.payment_settings.select_show_status(show_status)
-            if pay_type:
-                self.payment_settings.select_pay_type_filter(pay_type)
-            self.payment_settings.click_search_button()
+    def filter_payment_flow(self, keyword='', show_status='', pay_type=''):
+        """筛选支付方式流程"""
+        self.payment_settings.open_page()
+        if keyword:
+            self.payment_settings.input_keyword(keyword)
+        if show_status:
+            self.payment_settings.select_show_status(show_status)
+        if pay_type:
+            self.payment_settings.select_pay_type_filter(pay_type)
+        self.payment_settings.click_search_button()
