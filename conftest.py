@@ -27,8 +27,8 @@ def admin(browser):
     page=context.new_page()
     page.goto("http://new.z2u.test/admin")
     if '登录' in page.title():#判断是否登录
-        time.sleep(60)
         print("需要手动登录管理员账号，请在60秒内完成登录！")
+        time.sleep(60)
         page.context.storage_state(path=cookie_file)
     yield page
     page.close()
@@ -47,7 +47,7 @@ def pytest_runtest_makereport(item,call):
                 page_fixtures.append((name,value))
         for name,page in page_fixtures:
             try:
-                screenshot_bytes = page.screenshot(full_page=True)
+                screenshot_bytes = page.screenshot()
                 allure.attach(
                     screenshot_bytes,
                     name=f"失败截图【{name}】",
@@ -59,7 +59,7 @@ def pytest_runtest_makereport(item,call):
 # 运行所有测试之前执行，清空allure结果目录
 @pytest.fixture(scope="session", autouse=True)
 def clear_allure_results():
-    result_path = "./allure-results"
+    result_path = "allure-results"
     if os.path.exists(result_path):
         shutil.rmtree(result_path)
     os.makedirs(result_path, exist_ok=True)

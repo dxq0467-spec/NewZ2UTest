@@ -131,11 +131,19 @@ class PageBase:
         loc= self.get_locator(locator)
         try:
             expect(loc).to_have_text(text, timeout=self.DEFAULT_TIMEOUT)
-            return True
-        except AssertionError:
-            Logger.error(f"元素文本未包含【{text}】")
-            return False
+            Logger.info(f"校验通过：加载文本文本包含【{text}】")
+        except AssertionError as e:
+            Logger.error(f"校验失败：加载文本文本不包含【{text}】")
+            raise e
 
+    def expect_page_have_text(self,text):
+        """断言页面标题是否匹配"""
+        try:
+            expect(self.page).to_have_title(text, timeout=self.DEFAULT_TIMEOUT)
+            Logger.info(f"校验通过：页面加载标题文本包含【{text}】")
+        except AssertionError as e:
+            Logger.error(f"校验失败：页面加载标题文本不包含【{text}】")
+            raise e
     #
     def expect_locator_contains_text(self, locator, text):
         """断言文本模糊匹配"""
@@ -187,7 +195,7 @@ class PageBase:
         self.wait_for_load_state()
 
     def wait_for_timeout(self):
-        self.page.wait_for_timeout(timeout=self.DEFAULT_TIMEOUT)
+        self.page.wait_for_timeout(timeout=2000)
 
     def wait_for_load_state(self):
         self.page.wait_for_load_state(state = "domcontentloaded",timeout=self.DEFAULT_TIMEOUT)

@@ -1,5 +1,6 @@
 from Base.Base import PageBase
-
+import re
+from playwright.sync_api import expect
 
 class PaymentSettings(PageBase):
 
@@ -59,6 +60,7 @@ class PaymentSettings(PageBase):
     def open_page(self):
         url = self.base_url + '/admin/payment-settings'
         self.open_url(url)
+        expect(self.page).to_have_title(re.compile('支付方式'))
 
     # =============== 筛选条件操作 ================
     def select_pay_category(self, value):
